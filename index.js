@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express()
 
+app.use(express.static('build'))
+
+
 const bodyParser = require('body-parser')
 
 const morgan = require('morgan')
@@ -15,6 +18,7 @@ app.use(morgan(' :method :url :res[content-length] - :response-time ms :data' ))
 const cors = require('cors')
 
 app.use(cors())
+
 
 let persons = [
 
